@@ -1,0 +1,42 @@
+﻿@model IEnumerable<CourseAllocationCoreClient.Models.Allocation>
+
+@{
+    ViewData["Title"] = "ShowAllocation";
+}
+
+<h1>ShowAllocation</h1>
+<br />
+<h3>Welcome @ViewBag.Name to view the allocation</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject2)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject2)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<br />
+<a class="btn btn-danger" asp-action="Index" asp-controller="Home"> Logout </a>

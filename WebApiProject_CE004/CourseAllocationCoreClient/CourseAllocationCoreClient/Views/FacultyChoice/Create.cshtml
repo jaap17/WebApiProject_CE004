@@ -1,0 +1,79 @@
+﻿@model CourseAllocationCoreClient.Models.FacultyChoice
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>FacultyChoice</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority1" class="control-label"></label>
+                <select asp-for="Priority1" class="form-control">
+                    @foreach(var item in ViewBag.subjects)
+                    {
+                        <option value="@item.Name"> @item.Name </option>
+                    }
+                </select>
+                <span asp-validation-for="Priority1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority2" class="control-label"></label>
+                <select asp-for="Priority2" class="form-control">
+                    @foreach (var item in ViewBag.subjects)
+                    {
+                        <option value="@item.Name"> @item.Name </option>
+                    }
+                </select>
+                <span asp-validation-for="Priority2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority3" class="control-label"></label>
+                <select asp-for="Priority3" class="form-control">
+                    @foreach (var item in ViewBag.subjects)
+                    {
+                        <option value="@item.Name"> @item.Name </option>
+                    }
+                </select>
+                <span asp-validation-for="Priority3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority4" class="control-label"></label>
+                <select asp-for="Priority4" class="form-control">
+                    @foreach (var item in ViewBag.subjects)
+                    {
+                        <option value="@item.Name"> @item.Name </option>
+                    }
+                </select>
+                <span asp-validation-for="Priority4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority5" class="control-label"></label>
+                <select asp-for="Priority5" class="form-control">
+                    @foreach (var item in ViewBag.subjects)
+                    {
+                        <option value="@item.Name"> @item.Name </option>
+                    }
+                </select>
+                <span asp-validation-for="Priority5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Choice" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<a class="btn btn-danger" asp-action="Index" asp-controller="Login">Logout</a>
+
+

@@ -1,0 +1,23 @@
+﻿@model CourseAllocationCoreClient.Models.Login;
+
+<h1>Welcome @Model.Username to your Homepage</h1>
+<br />
+
+<br /><br />
+<div class="table">
+    <div class="row">
+        <a asp-action="Create" asp-controller="FacultyChoice" class="btn btn-success"s>Perform Choice Filling</a>
+    </div>
+    <br /><br />
+    <div class="row">
+        <form asp-action="ViewAllocation" asp-controller="Login">
+            <input type="hidden" value="@Model.Username" name="username"/>
+            <input type="submit" class="btn btn-info" value="View Allocation">
+        </form>
+        
+    </div>
+    <br /><br />
+    <div class="row">
+        <a class="btn btn-danger" asp-action="Index" asp-controller="Home">Logout</a>
+    </div>
+</div>
